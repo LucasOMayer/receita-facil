@@ -78,3 +78,19 @@ Cadastro de receitas pelo usuário, lista de compras e pesquisa por vários ingr
 ## Contexto da entrega
 
 **Atividade da aula de 12/11/2026 - planejamento inicial do projeto final**. O tema permanece sujeito à aprovação do professor.
+
+### Utilização de Inteligência Artificial no Desenvolvimento
+
+Durante o desenvolvimento do projeto **Receita Fácil**, foram utilizadas ferramentas de inteligência artificial generativa como apoio ao processo de programação, planejamento e aprendizagem.
+
+O **ChatGPT (OpenAI)** foi utilizado para auxiliar na definição da estrutura inicial da aplicação, organização dos arquivos, elaboração da documentação e sugestões de implementação de funcionalidades.
+
+O **Codex (OpenAI)** também foi utilizado como ferramenta de consulta e apoio à programação, incluindo orientações sobre estruturação do código e resolução de erros identificados durante o desenvolvimento.
+
+A metodologia adotada envolveu práticas de desenvolvimento assistido por inteligência artificial (*AI-assisted development*), incluindo a abordagem conhecida como *vibe coding*.
+
+As ferramentas foram utilizadas como recursos de apoio. A equipe permanece responsável por compreender, revisar, testar e validar o código apresentado, bem como pelas decisões e pelo resultado final do projeto.
+
+**Ferramentas utilizadas:** ChatGPT e OpenAI Codex.
+
+**Tecnologias do projeto:** HTML5, CSS3, JavaScript e Git/GitHub.
