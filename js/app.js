@@ -17,6 +17,7 @@ const $ = (seletor) => document.querySelector(seletor);
 const lista = $('#lista-receitas');
 const busca = $('#busca');
 const categoria = $('#categoria');
+const ordenacao = $('#ordenacao');
 const somenteFavoritas = $('#somente-favoritas');
 const dialogo = $('#detalhes');
 let toastTimer;
@@ -30,10 +31,16 @@ const normalizar = (texto) => String(texto).normalize('NFD').replace(/[\u0300-\u
 
 function filtrarReceitas() {
   const termo = normalizar(busca.value.trim());
-  return receitas.filter((receita) => {
+  const resultado = receitas.filter((receita) => {
     const combinaTexto = !termo || normalizar([receita.nome, ...receita.ingredientes].join(' ')).includes(termo);
     return combinaTexto && (categoria.value === 'todas' || receita.categoria === categoria.value) && (!somenteFavoritas.checked || favoritos.has(receita.id));
   });
+
+  // Ordenamos somente o resultado, sem alterar a ordem dos dados originais.
+  if (ordenacao.value === 'rapidas') resultado.sort((a, b) => a.tempo - b.tempo);
+  if (ordenacao.value === 'demoradas') resultado.sort((a, b) => b.tempo - a.tempo);
+  if (ordenacao.value === 'nome') resultado.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+  return resultado;
 }
 
 function criarCartao(receita) {
@@ -124,8 +131,9 @@ async function compartilharReceita(receita) {
 
 busca.addEventListener('input', renderizar);
 categoria.addEventListener('change', renderizar);
+ordenacao.addEventListener('change', renderizar);
 somenteFavoritas.addEventListener('change', renderizar);
-$('#limpar').addEventListener('click', () => { busca.value = ''; categoria.value = 'todas'; somenteFavoritas.checked = false; renderizar(); busca.focus(); });
+$('#limpar').addEventListener('click', () => { busca.value = ''; categoria.value = 'todas'; ordenacao.value = 'padrao'; somenteFavoritas.checked = false; renderizar(); busca.focus(); });
 lista.addEventListener('click', (evento) => {
   const ver = evento.target.closest('[data-ver]');
   const favorito = evento.target.closest('[data-favorito]');

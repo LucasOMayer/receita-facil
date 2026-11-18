@@ -20,6 +20,7 @@ Ajudar o usuário a encontrar receitas acessíveis a partir do nome do prato ou 
 - Mostrar 9 receitas de exemplo, com ingredientes, preparo e tempo estimado.
 - Pesquisar receitas por nome ou ingrediente (sem diferenciar acentos e letras maiúsculas).
 - Filtrar receitas por categoria.
+- Ordenar as receitas por menor tempo, maior tempo ou nome (A–Z), combinando com os filtros.
 - Visualizar ingredientes e modo de preparo.
 - Marcar receitas como favoritas (salvas localmente no navegador).
 - Compartilhar uma receita usando a **API de Compartilhamento Web** (`navigator.share`) quando disponível; caso contrário, tentar copiá-la para a **área de transferência**.
