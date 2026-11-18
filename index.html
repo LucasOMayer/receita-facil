@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#276749">
+  <meta name="description" content="Receita Fácil: receitas simples para aproveitar ingredientes que você já tem em casa.">
+  <title>Receita Fácil | Cozinhe com o que você tem</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Receita Fácil, voltar ao início"><span aria-hidden="true">🍳</span> Receita<span>Fácil</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#receitas">Receitas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="container hero-layout">
+        <div>
+          <p class="eyebrow">Receitas simples para o dia a dia</p>
+          <h1 id="hero-titulo">O que tem na <em>sua cozinha?</em></h1>
+          <p class="hero-description">Encontre ideias rápidas para cozinhar usando ingredientes que já tem em casa. Sem cadastro, sem complicação.</p>
+          <a class="button button-primary" href="#receitas">Explorar receitas <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true"><span>🥕</span><span>🍅</span><span class="plate">🍲</span><span>🧀</span><span>🥬</span></div>
+      </div>
+    </section>
+
+    <section class="recipes-section container" id="receitas" aria-labelledby="receitas-titulo">
+      <div class="section-heading"><div><p class="eyebrow">Descubra o que preparar</p><h2 id="receitas-titulo">Encontre sua próxima receita</h2></div><span class="counter" id="contador" aria-live="polite">Carregando receitas...</span></div>
+      <div class="filters">
+        <div class="field search-field"><label for="busca">Buscar por nome ou ingrediente</label><input id="busca" type="search" placeholder="Ex.: ovo, banana, macarrão..." autocomplete="off"></div>
+        <div class="field"><label for="categoria">Categoria</label><select id="categoria"><option value="todas">Todas</option><option value="Café da manhã">Café da manhã</option><option value="Almoço">Almoço</option><option value="Lanche">Lanche</option><option value="Sobremesa">Sobremesa</option><option value="Bebida">Bebida</option></select></div>
+        <div class="field field-check"><label class="check"><input type="checkbox" id="somente-favoritas"> Só favoritas <span aria-hidden="true">♥</span></label></div>
+      </div>
+      <div id="lista-receitas" class="recipe-grid" aria-live="polite"></div>
+      <div id="vazio" class="empty" hidden><span aria-hidden="true">🔎</span><h3>Nenhuma receita encontrada</h3><p>Tente outro ingrediente ou escolha outra categoria.</p><button class="button button-secondary" id="limpar" type="button">Limpar filtros</button></div>
+    </section>
+
+    <section class="about-section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about-layout"><div><p class="eyebrow">Sobre o projeto</p><h2 id="sobre-titulo">Menos desperdício, mais ideias</h2><p>O Receita Fácil é um protótipo acadêmico que reúne receitas de preparo acessível e permite buscar por ingredientes, visualizar o modo de preparo, favoritar e compartilhar sugestões.</p><p>As receitas apresentadas são exemplos educativos. Confira ingredientes, validade, restrições alimentares e cuidados de higiene antes de cozinhar.</p></div><div class="about-highlight"><span aria-hidden="true">🌱</span><strong>Comece com o que você já tem.</strong><p>Seus favoritos são guardados apenas neste navegador, sem envio de dados a servidores.</p></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><span>© 2026 Receita Fácil · Projeto acadêmico</span><a href="#inicio">Voltar ao início ↑</a></div></footer>
+
+  <dialog id="detalhes" aria-labelledby="modal-titulo"><div class="modal-content"><button type="button" id="fechar" class="close" aria-label="Fechar receita">×</button><div id="conteudo-receita"></div></div></dialog>
+  <div class="toast" id="aviso" role="status" aria-live="polite"></div>
+</body>
+</html>
